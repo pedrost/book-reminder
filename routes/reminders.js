@@ -23,6 +23,7 @@ router.post('/create', function(req, res, next) {
   const reminderData = {
     date: date,
     book: book,
+    complete: false
   };
 
   //create reminder 

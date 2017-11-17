@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+form {
+    display: inline-block;
+}
+.form-group {
+    text-align: center;
+    border: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.31);
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    font-family: 'Roboto';
+    font-weight: lighter;
+}
+.form-group h1 {
+    padding: 30px 0px 10px 0px;
+    font-family: 'Roboto';
+    font-weight: lighter;
+}
+.form-group button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.form-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#dateRangeForm .form-control-feedback {
+    top: 0;
+    right: -15px;
+}
