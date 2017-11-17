@@ -1,0 +1,5 @@
+{
+	"database": {
+		"uri": "mongodb://pedrost:pedro@001@ds157325.mlab.com:57325/desafio"
+	}
+}
