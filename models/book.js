@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 
 mongoose.model('book', {
-	id: {type: String, required: true},
-	name: { type: String, required: true },
-	pages: { type: Number, required: true},
-	image: { type: String, required: false},
-	complete: { type: Boolean, required: true}
+	id: String,
+	name: String,
+	pages: Number,
+	image: String,
 });

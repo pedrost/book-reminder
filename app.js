@@ -30,6 +30,13 @@ mongoose.connection.on('error', (error) => {
   console.log('error to connect', error);
 });
 
+app.get('/bookslist', function(req, res, next) {
+  res.render('listBooks');
+});
+app.get('/reminderslist', function(req, res, next) {
+  res.render('listReminders');
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -44,8 +51,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors(corsOptions));
 
-app.use('/books', books)
-app.use('/reminders', reminders)
+app.use('/books', books);
+app.use('/reminders', reminders);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">        
+        <link rel="stylesheet" href="/stylesheets/style.css">    
+        <script src="/snippets/reminder.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="books">
+                Cadastrar Livro
+            </a>
+            |
+            <a href="reminders">
+                Cadastrar Lembrete
+            </a>
+            |
+            <a href="bookslist">
+                Livros
+            </a>
+            |
+            <a href="reminderslist">
+                Lembretes
+            </a>
+        </nav>
+        <div class="form-group">
+            <form>
+            <h1>Cadastrar Lembrete</h1>
+            <div>
+                <h3>Selecionar Livro</h3>
+                <select class="book" id="books">
+
+                </select>
+            </div>
+            <h3>Selecionar Data e Hora</h3>
+            <div id="dateRangeForm" class="form-user">
+                <div class="col-xs-3">
+                    <div class="input-group input-append date">
+                        <input 
+                        type="date"
+                        class="form-control" 
+                        id="date-value" />
+                        <span class="input-group-addon add-on">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div> &nbsp; &nbsp; &nbsp; &nbsp;
+                <div class="col-xs-3">
+                    <div class="input-group input-append">
+                        <input 
+                        type="time" 
+                        class="form-control"
+                        id="time-value" />
+                        <span class="input-group-addon add-on">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Repetir?</h3>
+                <select class="form" id="repeat-value">
+                    <option value='0'>Não</option>
+                    <option value="Diariamente">Diariamente</option>
+                    <option value="Toda segunda">Toda segunda</option>
+                    <option value="Toda terça">Toda terça</option>
+                    <option value="Toda quarta">Toda quarta</option>
+                    <option value="Toda quinta">Toda quinta</option>
+                    <option value="Toda sexta">Toda sexta</option>
+                    <option value="Toda sábado">Toda sábado</option>
+                    <option value="Todo domingo">Toda domingo</option>                     
+                </select>
+            </div> 
+            <button type="button" class="btn btn btn-primary" onclick="createReminder()">Cadastrar</button>
+        </form>
+        </div>
+    </body>
+</html>

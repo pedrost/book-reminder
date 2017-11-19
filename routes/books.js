@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+router.get('/', function (req, res, next) {
+  res.render('book');
+});
+
 //Route List books
 router.get('/list', function(req, res, next) {
   mongoose.models.book.find({}, (error, users) => {
