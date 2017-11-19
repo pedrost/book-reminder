@@ -13,6 +13,7 @@ var mongo         = require('mongodb');
 var server        = app.listen(8810);
 var books         = require('./routes/books');
 var reminders     = require('./routes/reminders');
+var upload        = require('./routes/upload');
 
 const corsOptions = {
   origin: '*',
@@ -53,6 +54,7 @@ app.use(cors(corsOptions));
 
 app.use('/books', books);
 app.use('/reminders', reminders);
+app.use('/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

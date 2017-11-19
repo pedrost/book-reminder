@@ -27,6 +27,16 @@ function createBook() {
         const pagesReq = pages.value;
         const imageReq = image.value;
         var params = JSON.stringify({ name: nameReq, pages: pagesReq, image: imageReq })
-        console.log(params);
+        var req = new XMLHttpRequest();
+        req.open("post", "http://localhost:3001/books/create", true);
+        req.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        req.send(params);
+        req.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                notifySuccess();
+                book.value = " ";
+                pages.value = " ";
+            }
+        };
     }
 }
