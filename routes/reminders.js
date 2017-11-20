@@ -36,6 +36,16 @@ router.post('/create', function (req, res, next) {
   });
 });
 
+router.delete('/delete/:id', function (req, res, next) {
+  const whereReminder = {
+    _id: req.params.id
+  }
+  mongoose.models.reminder.remove(whereReminder, (error, reminder) => {
+    res.json({
+      message: 'deletado'
+    });
+  });
+});
 
 //Route Create reminder
 /*router.post('/create', function(req, res, next) {

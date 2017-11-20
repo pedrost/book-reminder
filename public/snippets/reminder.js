@@ -50,7 +50,7 @@ function createReminder() {
     if (time.length < 4) {
         return notifyError();
     }
-    if (willReapeat == 0 && time.length >= 4) {
+    if (willReapeat == 0 && time.length >= 4 && date.length < 9) {
         return notifyError();
     }
     else {
