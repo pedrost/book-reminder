@@ -25,17 +25,17 @@
         </a>
     </nav>
     <div class="form-group">
-        <form>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
             <h1>Cadastrar Livro</h1>
             <div>
                 <h3>Nome do Livro</h3>
                 <input type="text" class="form-control" id="book-name-value"/>
                 <h3>Quantidade de páginas</h3>
-                <input type="number" class="form-control" id="book-pages-value"/>
+                <input type="number" onkeydown="javascript: return event.keyCode == (69 || 101) ? false : true" class="form-control" id="book-pages-value"/>
                 <h3>Imagem</h3>
-                <input type="file" class="form-control" name="picture"/>
+                <input type="file" class="form-control" name="picture" id="picture-value"/>
             </div>
-            <button type="button" class="btn btn btn-primary" onclick="createBook()">Cadastrar</button>
+            <button type="submit" class="btn btn btn-primary" onclick="createBook()">Cadastrar</button>
         </form>
     </div>
     </div>

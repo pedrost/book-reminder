@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const mongoose = require('mongoose');
 const path = require('path');
-
-router.get('/index', function(req, res, next) {
-    res.render('index', { title: 'Upload!' });
-  });
 
 const storage = multer.diskStorage({
     destination: './public/uploads',
     filename: function(req, file, cb) {
-        cb(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname));
+        cb(null, file.originalname);
     }
+});
+
+router.get('/', function (req, res, next) {
+    res.render('book');
 });
 
 const upload = multer({
@@ -38,10 +37,10 @@ function checkFile(file, cb) {
 router.post('/', function(req, res){
     upload(req, res, function(err){
         if (err) {
-            return
+            return console.log(err);
         }
         else {
-            console.log(req.file);
+            return;
         }
     })
 });
