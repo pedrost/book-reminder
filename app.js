@@ -9,7 +9,6 @@ const config        = require('./config');
 const app           = express();
 const cors          = require('cors');
 const mongo         = require('mongodb');
-const server        = app.listen(8810);
 
 const books         = require('./routes/books');
 const reminders     = require('./routes/reminders');
@@ -25,7 +24,7 @@ mongoose.connect('mongodb://pedro:beliver@ds111476.mlab.com:11476/jera', {
 );
 
 mongoose.connection.on('connected', () => {
-  console.log('Database Connected');
+  console.log('Database Connected, Listening on port 3001');
 });
 mongoose.connection.on('error', (error) => {
   console.log('error to connect', error);
