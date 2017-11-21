@@ -28,6 +28,13 @@ router.post('/create', function(req, res, next) {
   const name = req.body.name;
   const pages = req.body.pages;
   const image = req.body.image;
+  
+  if (!name || !name.length) {
+    return utils.badResquest(res, 'invalid name');
+  }
+  if (!pages || !pages.length) {
+    return utils.badResquest(res, 'invalid amount of pages');
+  }
 
   const bookData = {
     name: name,

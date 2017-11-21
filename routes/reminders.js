@@ -27,6 +27,13 @@ router.post('/create', function (req, res, next) {
   const book = req.body.book;
   const date = req.body.date;
 
+  if (!book || !book.length) {
+    return utils.badResquest(res, 'invalid name');
+  }
+  if (!date || !date.length) {
+    return utils.badResquest(res, 'invalid amount of pages');
+  }
+
   const reminderData = {
     book: book,
     date: date
