@@ -1,0 +1,5 @@
+{
+	"database": {
+		"uri": "mongodb://pedro:beliver@ds111476.mlab.com:11476/jera"
+	}
+}

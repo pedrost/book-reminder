@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/snippets/book.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="books">
+            Cadastrar Livro
+        </a>
+        |
+        <a href="reminders">
+            Cadastrar Lembrete
+        </a>
+        |
+        <a href="bookslist">
+            Livros
+        </a>
+        |
+        <a href="reminderslist">
+            Lembretes
+        </a>
+    </nav>
+    <div class="form-group">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <h1>Cadastrar Livro</h1>
+            <div>
+                <h3>Nome do Livro</h3>
+                <input type="text" class="form-control" id="book-name-value"/>
+                <h3>Quantidade de páginas</h3>
+                <input type="number" onkeydown="javascript: return event.keyCode == (69 || 101) ? false : true" class="form-control" id="book-pages-value"/>
+                <h3>Imagem</h3>
+                <input type="file" class="form-control" name="picture" id="picture-value"/>
+            </div>
+            <button type="submit" class="btn btn btn-primary" onclick="createBook()">Cadastrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
