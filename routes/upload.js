@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 const storage = multer.diskStorage({
     destination: './public/uploads',
@@ -45,8 +46,15 @@ router.post('/', function(req, res){
     })
 });
 
-router.get('/getpic', function(req, res, next){
-    res.json({storage})
+router.get('/getpic/:name', function(req, res, next){
+    const name = req.params.name;
+    const files = fs.readdirSync('/Users/pedroaugusto/Documents/jera/book-reminder/public/uploads');
+    files.forEach((file) => {
+        if (file == name) {
+            console.log(file);
+            res.end(file);
+        }
+    });
 })
 
 module.exports = router;

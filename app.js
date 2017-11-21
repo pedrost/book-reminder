@@ -1,19 +1,19 @@
-var express       = require('express');
-var path          = require('path');
-var morgan        = require('morgan');
-var cookieParser  = require('cookie-parser');
-var bodyParser    = require('body-parser');
-var mongoose      = require('mongoose');
-var models        = require('./models');
-var config        = require('./config');
-var app           = express();
-var cors          = require('cors');
-var mongo         = require('mongodb');
+const express       = require('express');
+const path          = require('path');
+const morgan        = require('morgan');
+const cookieParser  = require('cookie-parser');
+const bodyParser    = require('body-parser');
+const mongoose      = require('mongoose');
+const models        = require('./models');
+const config        = require('./config');
+const app           = express();
+const cors          = require('cors');
+const mongo         = require('mongodb');
+const server        = app.listen(8810);
 
-var server        = app.listen(8810);
-var books         = require('./routes/books');
-var reminders     = require('./routes/reminders');
-var upload        = require('./routes/upload');
+const books         = require('./routes/books');
+const reminders     = require('./routes/reminders');
+const upload        = require('./routes/upload');
 
 const corsOptions = {
   origin: '*',
@@ -50,6 +50,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static('public'))
 app.use(cors(corsOptions));
 
 app.use('/books', books);
