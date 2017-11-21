@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const utils = require('../libs/utils');
 
 const storage = multer.diskStorage({
     destination: './public/uploads',
@@ -38,7 +39,7 @@ function checkFile(file, cb) {
 router.post('/', function(req, res){
     upload(req, res, function(err){
         if (err) {
-            return console.log(err);
+            return utils.badResquest(res, 'error uploading image');
         }
         else {
             return;
@@ -48,7 +49,7 @@ router.post('/', function(req, res){
 
 router.get('/getpic/:name', function(req, res, next){
     const name = req.params.name;
-    const files = fs.readdirSync('/Users/pedroaugusto/Documents/jera/book-reminder/public/uploads');
+    const files = fs.readdirSync(__dirname + '../public/uploads');
     files.forEach((file) => {
         if (file == name) {
             console.log(file);

@@ -1,4 +1,9 @@
 /**
+ * Personal short lib for HTTP requests
+ * From: @pedrost
+ */
+
+/**
  * response message according by code.
  * @param {Object} res request object.
  * @param {String} message response message.
