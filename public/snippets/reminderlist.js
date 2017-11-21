@@ -23,7 +23,6 @@ function renderOptions(xml) {
     var xmlDoc = xml.response;
     var jsonArray = JSON.parse(xmlDoc);
     var options = "";
-    console.log(jsonArray.data);
     var x = jsonArray.data;
     for (i = 0; i < x.length; i++) {
         const element = x[i];

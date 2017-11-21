@@ -31,6 +31,9 @@ mongoose.connection.on('error', (error) => {
   console.log('error to connect', error);
 });
 
+app.get('/', function(req, res, next) {
+  res.render('index');
+});
 app.get('/bookslist', function(req, res, next) {
   res.render('listBooks');
 });
