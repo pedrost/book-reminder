@@ -8,7 +8,7 @@ Book-reminder é uma aplicação que ajuda o usuário a se organizar lembrando-o
 
 ## API:
 
-Uma tela de bem-vindo, tela de cadastro de livros, nome, páginas, e imagem (opcional), tela de cadastro de lembretes, livro e data (dd/mm/aa), ou diariamente, toda segunda, etc. E por fim, tela de listagem de livros e lembretes.
+Uma tela de bem-vindo, tela de cadastro de livros, nome, páginas, e imagem, tela de cadastro de lembretes, livro e data (dd/mm/aa), ou diariamente, toda segunda, etc. E por fim, tela de listagem de livros e lembretes.
 
 ## Requisitos para instalação:
 * Node.js
