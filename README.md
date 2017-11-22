@@ -4,7 +4,7 @@
 
 ## Propósito:
 
-Book-reminder é uma aplicação que ajuda o usuário a se organizar para lembrar de suas leituras.
+Book-reminder é uma aplicação que ajuda o usuário a se organizar lembrando-o de suas leituras.
 
 ## API:
 
