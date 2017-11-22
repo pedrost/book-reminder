@@ -19,7 +19,7 @@ function createBook() {
     const pages = document.getElementById('book-pages-value');
     const image = document.getElementById("picture-value");
 
-    if (! book.value.length || ! pages.value.length) {
+    if (! book.value.length || ! pages.value.length || ! image.value.length) {
         return notifyError();
     }
 
